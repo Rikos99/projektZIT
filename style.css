@@ -1,0 +1,32 @@
+#CB_toggle
+{
+    visibility: hidden;
+}
+#LBL_toggle
+{
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px;
+    float: right;
+}
+nav
+{
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+nav a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.disable-select /* Vypne selectování textu */
+{
+    user-select: none;
+}
