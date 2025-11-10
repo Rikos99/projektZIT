@@ -1,3 +1,6 @@
+let today = new Date();
+today.setUTCFullYear(today.getUTCFullYear() + 1);
+
 function includeHTML(element)
 {
     const body = document.querySelector("body");
@@ -38,22 +41,22 @@ function includeHTML(element)
     }
 }
 
-function switchTheme(checked)
+function switchTheme()
 {
     const label = document.getElementById("LBL_toggle");
-    if(checked === true) // Dark mode
+    if(document.cookie.search("light") !== -1   ) // Dark mode
     {
         console.log("Switched to dark mode");
         label.innerText = "Light Mode";
-        label.style.backgroundColor = "#000000";
-        label.style.color = "#FFFFFF";
+        document.querySelector("html").setAttribute("data-theme", "dark");
+        document.cookie = "theme=dark; expires=" + today.toUTCString();
     }
     else // Light mode
     {
         console.log("Switched to light mode");
         label.innerText = "Dark Mode";
-        label.style.backgroundColor = "#FFFFFF";
-        label.style.color = "#000000"
+        document.querySelector("html").setAttribute("data-theme", "light");
+        document.cookie = "theme=light; expires=" + today.toUTCString();
     }
 }
 
@@ -64,4 +67,21 @@ document.addEventListener("DOMContentLoaded", function()
     {
         switchTheme(toggle.checked);
     });
+
+    const label = document.getElementById("LBL_toggle");
+    if(document.cookie.search("light") === -1   ) // Dark mode
+    {
+        console.log("Switched to dark mode");
+        label.innerText = "Light Mode";
+        document.querySelector("html").setAttribute("data-theme", "dark");
+        document.cookie = "theme=dark; expires=" + today.toUTCString();
+    }
+    else // Light mode
+    {
+        console.log("Switched to light mode");
+        label.innerText = "Dark Mode";
+        document.querySelector("html").setAttribute("data-theme", "light");
+        document.cookie = "theme=light; expires=" + today.toUTCString();
+    }
+
 });

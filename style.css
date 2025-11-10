@@ -1,3 +1,21 @@
+[data-theme="light"]
+{
+    --primary-color: white;
+    --secondary-color: black;
+}
+
+[data-theme="dark"]
+{
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+body
+{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 #CB_toggle
 {
     visibility: hidden;
@@ -5,7 +23,7 @@
 #LBL_toggle
 {
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
     display: inline-block;
     padding: 3px;
@@ -16,14 +34,14 @@ nav
     display: inline-block;
     width: 100%;
     padding: 5px 0 5px 0;
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
+    border-top: solid 2px var(--secondary-color);
+    border-bottom: solid 2px var(--secondary-color);
 }
 
 nav a
 {
     text-decoration: none;
-    color: black;
+    color: var(--secondary-color);
 }
 
 .disable-select /* Vypne selectování textu */
