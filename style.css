@@ -1,13 +1,27 @@
+/* Nastavení fontu pro celou stránku */
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+*
+{
+    font-family: "Stack Sans Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    user-select: none;
+}
+
+/* Variables pro dark a light theme */
 [data-theme="light"]
 {
     --primary-color: white;
     --secondary-color: black;
+    --ternary-color: #c00000;
 }
 
 [data-theme="dark"]
 {
     --primary-color: black;
     --secondary-color: white;
+    --ternary-color: #ff0000;
 }
 
 body
@@ -16,6 +30,7 @@ body
     color: var(--secondary-color);
 }
 
+/* Navigace */
 #CB_toggle
 {
     visibility: hidden;
@@ -23,28 +38,104 @@ body
 #LBL_toggle
 {
     cursor: pointer;
-    border: 1px solid var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 5px;
-    display: inline-block;
     padding: 3px;
+    margin-left: auto;
     float: right;
 }
 nav
 {
-    display: inline-block;
     width: 100%;
-    padding: 5px 0 5px 0;
     border-top: solid 2px var(--secondary-color);
     border-bottom: solid 2px var(--secondary-color);
+    padding: 5px 0 5px 0;
+    font-size: 16pt;
 }
 
-nav a
+nav div
+{
+    vertical-align: middle;
+    display: inline-block;
+    padding: 5px 5px 5px 0;
+    border-right: 2px solid var(--secondary-color);
+}
+
+nav div a
 {
     text-decoration: none;
     color: var(--secondary-color);
+    text-align: center;
 }
 
-.disable-select /* Vypne selectování textu */
+main
 {
-    user-select: none;
+    font-size: 16pt;
+}
+
+main a
+{
+    color: var(--ternary-color);
+}
+main a:visited
+{
+    color: var(--ternary-color);
+}
+
+model-viewer
+{
+    width: 30vw;
+    height: 20vw;
+    margin: 0 auto;
+    padding: 5px;
+    border: solid 2px var(--secondary-color);
+}
+
+.modelDIV
+{
+    display: inline-block;
+    width: 49vw;
+}
+
+.modelDIV p
+{
+    text-align: center;
+}
+
+#albumGRID
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+#albumGRID div
+{
+    margin: 0 auto 1vw;
+}
+#albumGRID div img
+{
+    height: 25vw;
+    width: 25vw;
+}
+#albumGRID div p
+{
+    text-align: center;
+}
+
+footer
+{
+    /*
+    position: fixed;
+    left: 82vw;
+    bottom: 0;
+     */
+    float: right;
+    margin: 16px;
+    padding: 16px;
+    color: var(--ternary-color);
+    background-color: var(--primary-color);
+}
+
+footer p
+{
+    margin: 0;
 }

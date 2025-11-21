@@ -5,6 +5,7 @@
     <title>Osobní stránka | ZIT Richard Dluhoš 2025</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script src="scripts.js"></script>
 </head>
 <body>
@@ -15,9 +16,55 @@
 
     <!-- Body -->
     <main>
+        <script>
+            const year = new Date().getUTCFullYear();
+            const month = new Date().getUTCMonth();
+            let grade;
+            if((year === 2025 && month >= 6) || (year === 2026 && month < 6)) grade = 1;
+            else if((year === 2026 && month >= 6) || (year === 2027 && month < 6)) grade = 2;
+            else if((year === 2027 && month >= 6) || (year === 2028 && month < 6)) grade = 3;
+            else if((year === 2028 && month >= 6) || (year === 2029 && month < 6)) grade = 4;
+            else if((year === 2029 && month >= 6) || (year === 2030 && month < 6)) grade = 5;
+        </script>
 
+        <p>Jmenuji se <span style="color: var(--ternary-color)">Richard Dluhoš</span>, jsem v <script>document.write(grade + ".")</script> ročníku studia na <span style="color: var(--ternary-color)">VŠB-TUO</span>.</p>
+        <p>Mezi mé záliby patří převážně činnosti spojené s počitači, specificky 3D grafika a vývoj her.</p>
+        <p>Zkušenosti:</p>
+        <ul>
+            <li>Absolvent SPŠEI (Střední průmyslové školy elektrotechniky a informatiky, neformálně Kratochvílky)</li>
+            <li>Praxe na VŠB v letech <a href="https://github.com/Pietro228/PraxeVSB-2023" target="_blank">2023</a> a <a href="https://github.com/Gregstr05/PraxeVSB-2024" target="_blank">2024</a> pod panem Ing. Martinem Němcem Ph.D. - tvorba 3D modelů v Blenderu a Substance 3D Painteru</li>
+            <li>Tvorba dlouhodobé maturitní práce taktéž pod panem Ing. Martinem Němcem Ph.D., přesněji:<br>
+                <ul>
+                    <li>Tvorba 3D modelů v Blenderu a Substance 3D Painteru</li>
+                    <li>Tvorba UI a 2D grafiky v Aseprite</li>
+                    <li>Programování v Unreal Engine 5, přesněji ve skriptovacím jazyku Blueprints</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="modelDIV">
+            <model-viewer src="pluto.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+            <p>Model DIY robota použitý v mé dlouhodobé maturitní práci</p>
+        </div>
+        <div class="modelDIV">
+            <model-viewer src="pluto.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+            <p>Model použitý v mé dlouhodobé maturitní práci</p>
+        </div>
+
+
+        <p>Také rád poslouchám hudbu, mezi mé oblíbené alba patří:</p>
+        <div id="albumGRID">
+            <div><img alt="Revolver album cover" src="https://www.thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Revolver.jpg?itok=J0Q8YaGs"><p>The Beatles - Revolver (1966)</p></div>
+            <div><img alt="Abbey Road album cover" src="https://www.udiscovermusic.com/wp-content/uploads/2020/08/Abbey-Road.jpg"><p>The Beatles - Abbey Road (1969)</p></div>
+            <div><img alt="A Night at the Opera album cover"  src="https://www.thisdayinmusic.com/wp-content/uploads/2018/05/a-night-at-the-opera.jpg"><p>Queen - A Night at the Opera (1975)</p></div>
+            <div><img alt="Paranoid album cover"  src="https://pure-music.co.uk/wp-content/uploads/2019/09/Paranoid-album-cover.png"><p>Black Sabbath - Paranoid (1970)</p></div>
+            <div><img alt="Hybrid Theory album cover"  src="https://static.qobuz.com/images/covers/07/91/0093624949107_600.jpg"><p>Linkin Park - Hybrid Theory (2000)</p></div>
+            <div><img alt="Californication album cover"  src="https://storage.highresaudio.com/web/imgcache/882e4246c0facd746b8677760ae6109a/field4_500x500.jpg"><p>Red Hot Chilli Peppers - Californication (1999)</p></div>
+            <div><img alt="Ride the Lightning album cover"  src="https://cdn.media.amplience.net/i/metallica/ride-the-lightning_cover?fmt=auto&maxW=1050"><p>Metallica - Ride the Lightning (1984)</p></div>
+            <div><img alt="OK Computer album cover"  src="https://i.discogs.com/q2WXQv32jGLo7_jylstbidwEOV6Qpo2HHRbe2kX8njY/rs:fit/g:sm/q:90/h:600/w:590/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1ODcx/NjgtMTY0NzQ0NTg0/My00ODU0LmpwZWc.jpeg"><p>Radiohead - OK Computer (1997)</p></div>
+            <div><img alt="Bratříčku, zavírej vrátka album cover"  src="img/bratrickuZavirejVratka.jpg"><p>Karel Kryl - Bratříčku, zavírej vrátka (1969)</p></div>
+        </div>
     </main>
-
     <!-- Include footer w/ JS -->
     <script>
         includeHTML("footer");

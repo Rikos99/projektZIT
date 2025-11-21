@@ -5,25 +5,20 @@ function includeHTML(element)
 {
     const body = document.querySelector("body");
     const actualElement = document.createElement(element);
-    actualElement.classList.add("disable-select");
-    const title = document.title;
-
     body.append(actualElement);
 
     // Element definitions
     const headerInnerHTML =
-        "    <h1>ZIT Projekt Richarda Dluhoše</h1>\n" +
+        "    <h1>Osobní stránky Richarda Dluhoše</h1>\n" +
         "    <nav>\n" +
-        "        <a href=\"index.html\">Úvodní stránka</a>\n" +
-        "        <a href=\"page1.html\">Osobní stránka</a>\n" +
-        "        <a href=\"page2.html\">Projekty v rámci 1. ročníku</a>\n" +
+        "        <div><a class='navLink' href=\"index.html\">Úvodní stránka</a></div>\n" +
+        "        <div><a class='navLink' href=\"page1.html\">Osobní stránka</a></div>\n" +
+        "        <div><a class='navLink' href=\"page2.html\">Projekty v rámci 1. semestru</a></div>\n" +
         "    <label for='CB_toggle' id='LBL_toggle'>Dark Mode</label>" +
         "    <input type='checkbox' id='CB_toggle' value='checked'>" +
-        "    </nav>\n" +
-        "<h2>" + title.substring(0, title.length - 26) + "</h2>";
-
+        "    </nav>\n"
     const footerInnerHTML =
-        "<p>&#169;Richard Dluhoš (DLU0048), 2025</p>\n";
+        "<p>&#169;2025 Richard Dluhoš (DLU0048)</p>\n";
 
     // Adding element definitions to actual elements
     switch(element)
@@ -83,5 +78,17 @@ document.addEventListener("DOMContentLoaded", function()
         document.querySelector("html").setAttribute("data-theme", "light");
         document.cookie = "theme=light; expires=" + today.toUTCString();
     }
+    const navChildren = document.getElementsByClassName("navLink");
 
+    console.log(navChildren.length)
+    for (let i = 0; i < navChildren.length; i++)
+    {
+        console.log("Child ", i);
+        if(navChildren[i].innerHTML === document.title.substring(0, document.title.length - 26))
+        {
+
+            navChildren[i].style.fontWeight = "bold";
+            navChildren[i].style.color = "var(--ternary-color)"
+        }
+    }
 });
