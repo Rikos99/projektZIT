@@ -43,6 +43,8 @@ body
     padding: 3px;
     margin-left: auto;
     float: right;
+    text-align: center;
+    margin-right: 10px;
 }
 nav
 {
@@ -59,6 +61,7 @@ nav div
     display: inline-block;
     padding: 5px 5px 5px 0;
     border-right: 2px solid var(--secondary-color);
+    text-align: center;
 }
 
 nav div a
@@ -84,8 +87,8 @@ main a:visited
 
 model-viewer
 {
-    width: 30vw;
-    height: 20vw;
+    width: 45vw;
+    height: 30vw;
     margin: 0 auto;
     padding: 5px;
     border: solid 2px var(--secondary-color);

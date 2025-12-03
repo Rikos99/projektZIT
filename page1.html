@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs" data-theme="light">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <title>Osobní stránka | ZIT Richard Dluhoš 2025</title>
@@ -33,7 +33,7 @@
         <ul>
             <li>Absolvent SPŠEI (Střední průmyslové školy elektrotechniky a informatiky, neformálně Kratochvílky)</li>
             <li>Praxe na VŠB v letech <a href="https://github.com/Pietro228/PraxeVSB-2023" target="_blank">2023</a> a <a href="https://github.com/Gregstr05/PraxeVSB-2024" target="_blank">2024</a> pod panem Ing. Martinem Němcem Ph.D. - tvorba 3D modelů v Blenderu a Substance 3D Painteru</li>
-            <li>Tvorba dlouhodobé maturitní práce taktéž pod panem Ing. Martinem Němcem Ph.D., přesněji:<br>
+            <li>Tvorba <a href="https://github.com/Rikos99/prestizniMaturitniProjekt">dlouhodobé maturitní práce</a> taktéž pod panem Ing. Martinem Němcem Ph.D., přesněji:<br>
                 <ul>
                     <li>Tvorba 3D modelů v Blenderu a Substance 3D Painteru</li>
                     <li>Tvorba UI a 2D grafiky v Aseprite</li>
@@ -42,15 +42,16 @@
             </li>
         </ul>
 
-        <div class="modelDIV">
-            <model-viewer src="pluto.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-            <p>Model DIY robota použitý v mé dlouhodobé maturitní práci</p>
+        <div id="modelGRID">
+            <div class="modelDIV">
+                <model-viewer src="models/ceres/ceres.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+                <p>Model DIY robota použitý v <a href="https://github.com/Rikos99/prestizniMaturitniProjekt" target="_blank">dlouhodobé maturitní práci</a></p>
+            </div>
+            <div class="modelDIV">
+                <model-viewer src="models/kolobka-kos/kolobka.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+                <p>Modely vytvořené v průběhu <a href="https://github.com/Gregstr05/PraxeVSB-2024" target="_blank">praxí 2024</a></p>
+            </div>
         </div>
-        <div class="modelDIV">
-            <model-viewer src="pluto.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-            <p>Model použitý v mé dlouhodobé maturitní práci</p>
-        </div>
-
 
         <p>Také rád poslouchám hudbu, mezi mé oblíbené alba patří:</p>
         <div id="albumGRID">

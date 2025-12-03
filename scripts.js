@@ -1,11 +1,26 @@
-let today = new Date();
-today.setUTCFullYear(today.getUTCFullYear() + 1);
+if(localStorage.getItem("theme") === null)
+{
+    localStorage.setItem("theme", "light");
+}
+
+updateTheme();
+
+window.addEventListener("resize", resizeWindow);
 
 function includeHTML(element)
 {
     const body = document.querySelector("body");
     const actualElement = document.createElement(element);
     body.append(actualElement);
+    let lblText;
+    if(localStorage.getItem("theme") === "dark")
+    {
+        lblText = "Light Mode";
+    }
+    else
+    {
+        lblText = "Dark Mode";
+    }
 
     // Element definitions
     const headerInnerHTML =
@@ -14,7 +29,7 @@ function includeHTML(element)
         "        <div><a class='navLink' href=\"index.html\">Úvodní stránka</a></div>\n" +
         "        <div><a class='navLink' href=\"page1.html\">Osobní stránka</a></div>\n" +
         "        <div><a class='navLink' href=\"page2.html\">Projekty v rámci 1. semestru</a></div>\n" +
-        "    <label for='CB_toggle' id='LBL_toggle'>Dark Mode</label>" +
+        "    <label for='CB_toggle' id='LBL_toggle'>" + lblText + "</label>" +
         "    <input type='checkbox' id='CB_toggle' value='checked'>" +
         "    </nav>\n"
     const footerInnerHTML =
@@ -36,59 +51,106 @@ function includeHTML(element)
     }
 }
 
-function switchTheme()
+function updateTheme()
 {
-    const label = document.getElementById("LBL_toggle");
-    if(document.cookie.search("light") !== -1   ) // Dark mode
+    if(localStorage.getItem("theme") === "dark") // Dark mode
     {
-        console.log("Switched to dark mode");
-        label.innerText = "Light Mode";
         document.querySelector("html").setAttribute("data-theme", "dark");
-        document.cookie = "theme=dark; expires=" + today.toUTCString();
     }
     else // Light mode
     {
-        console.log("Switched to light mode");
-        label.innerText = "Dark Mode";
         document.querySelector("html").setAttribute("data-theme", "light");
-        document.cookie = "theme=light; expires=" + today.toUTCString();
+    }
+}
+
+function updateThemeLabel()
+{
+    if(localStorage.getItem("theme") === "dark") // Dark mode
+    {
+        document.getElementById("LBL_toggle").innerText = "Light Mode";
+    }
+    else // Light mode
+    {
+        document.getElementById("LBL_toggle").innerText = "Dark Mode";
     }
 }
 
 document.addEventListener("DOMContentLoaded", function()
 {
     const toggle = document.getElementById("CB_toggle");
-    toggle.addEventListener("change", function()
+    toggle.addEventListener("change",function()
     {
-        switchTheme(toggle.checked);
+        localStorage.getItem("theme") === "dark" ? localStorage.setItem("theme", "light") : localStorage.setItem("theme", "dark");
+        updateTheme();
+        updateThemeLabel();
     });
 
-    const label = document.getElementById("LBL_toggle");
-    if(document.cookie.search("light") === -1   ) // Dark mode
-    {
-        console.log("Switched to dark mode");
-        label.innerText = "Light Mode";
-        document.querySelector("html").setAttribute("data-theme", "dark");
-        document.cookie = "theme=dark; expires=" + today.toUTCString();
-    }
-    else // Light mode
-    {
-        console.log("Switched to light mode");
-        label.innerText = "Dark Mode";
-        document.querySelector("html").setAttribute("data-theme", "light");
-        document.cookie = "theme=light; expires=" + today.toUTCString();
-    }
-    const navChildren = document.getElementsByClassName("navLink");
+    resizeWindow();
 
-    console.log(navChildren.length)
+    const navChildren = document.getElementsByClassName("navLink");
     for (let i = 0; i < navChildren.length; i++)
     {
-        console.log("Child ", i);
         if(navChildren[i].innerHTML === document.title.substring(0, document.title.length - 26))
         {
-
             navChildren[i].style.fontWeight = "bold";
             navChildren[i].style.color = "var(--ternary-color)"
         }
     }
 });
+
+function resizeWindow()
+{
+    if(window.innerHeight > window.innerWidth)
+    {
+        for(let i = 0; i < document.querySelector("nav").children.length; i++)
+        {
+            const elem = document.querySelector("nav").children[i];
+            elem.style.display = "block";
+            if(elem.id === "LBL_toggle")
+            {
+                elem.style.marginLeft = "0";
+                elem.style.float = "none";
+            }
+            else
+            {
+                elem.style.borderWidth = "0";
+            }
+        }
+
+        for (let i = 0; i < document.getElementsByClassName("modelDIV").length; i++)
+        {
+            const modelDIV = document.getElementsByClassName("modelDIV")[i];
+            modelDIV.style.width = "95vw";
+            modelDIV.style.display = "block";
+            modelDIV.children[0].style.width = "90vw";
+            modelDIV.children[0].style.height = "65vw";
+        }
+    }
+    else
+    {
+        for(let i = 0; i < document.querySelector("nav").children.length; i++)
+        {
+            const elem = document.querySelector("nav").children[i];
+            elem.style.display = "inline-block";
+            if(elem.id === "LBL_toggle")
+            {
+                elem.style.marginLeft = "auto";
+                elem.style.float = "right";
+            }
+            else
+            {
+                elem.style.borderWidth = "initial";
+            }
+        }
+
+        for (let i = 0; i < document.getElementsByClassName("modelDIV").length; i++)
+        {
+            const modelDIV = document.getElementsByClassName("modelDIV")[i];
+            modelDIV.style.width = "49vw";
+            modelDIV.style.display = "inline-block";
+            modelDIV.children[0].style.width = "45vw";
+            modelDIV.children[0].style.height = "30vw";
+        }
+    }
+}
+
