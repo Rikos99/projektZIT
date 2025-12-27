@@ -5,15 +5,12 @@
     <title>Projekty v rámci 1. semestru | ZIT Richard Dluhoš 2025</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script src="scripts.js"></script>
     <style>
-        #credits
+        model-viewer
         {
-            width: 50vw;
-        }
-        span
-        {
-            color: var(--ternary-color);
+            width: 44.25vw;
         }
     </style>
 </head>
@@ -25,7 +22,7 @@
 
     <!-- Body -->
     <main>
-        <p>Vysokoškolské projekty</p>
+        <h2>Vysokoškolské projekty</h2>
         <ol>
             <li><span>Tyto webové stránky</span>
                 <ul>
@@ -41,18 +38,35 @@
                 </ul>
             </li>
         </ol>
-        <p>Dřívější projekty (aby nebyla tahle stránka moc prázdná)</p>
+        <h2>Dřívější projekty (aby tahle stránka nebyla tak prázdná)</h2>
         <ol start="3">
             <li><span>Praxe 2023</span>
                 <ul>
                     <li>22.05.2023 - 02.06.2023</li>
-                    <li>Tvořeno v desetičlenném týmu<br><img id="credits" alt="Seznam jmen v týmu" src="img/credits.png"></li>
+                    <li>VŠB-TUO FEI</li>
+                    <li>Puzzle hra s magickou tématikou</li>
+                    <li>Náplň: Tvorba 3D grafiky</li>
+                    <li>Tvořeno v Unreal Engine 5 v desetičlenném týmu<br>
+                        <a href="img/credits.png" target="_blank"><img class="galleryImg" alt="Seznam jmen v týmu" src="img/credits.png"></a></li>
+                    <li>Ukázky:<br>
+                        <div class="galleryGRID">
+                            <div><a href="img/magicGame/1.png" target="_blank"><img alt="Ukázka magic game 1" class="galleryImg" src="img/magicGame/1.png"></a></div>
+                            <div><a href="img/magicGame/2.png" target="_blank"><img alt="Ukázka magic game 2" class="galleryImg" src="img/magicGame/2.png"></a></div>
+                            <div><a href="img/magicGame/3.png" target="_blank"><img alt="Ukázka magic game 3" class="galleryImg" src="img/magicGame/3.png"></a></div>
+                            <div><a href="img/magicGame/4.png" target="_blank"><img alt="Ukázka magic game 4" class="galleryImg" src="img/magicGame/4.png"></a></div>
+                            <div><model-viewer src="models/pickaxe.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+                            <div><model-viewer src="models/kovadlina.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+                        </div>
+                    </li>
                 </ul>
             </li>
             <li><span>Praxe 2024</span>
                 <ul>
                     <li>20.05.2024 - 31.05.2024</li>
-                    <li>Tvořeno v šestičlenném týmu
+                    <li>VŠB-TUO FEI</li>
+                    <li>Puzzle hra zasazena v ponorce</li>
+                    <li>Náplň: Tvorba 3D grafiky</li>
+                    <li>Tvořeno v Unreal Engine 5 v šestičlenném týmu
                         <ul>
                             <li>Richard Dluhoš</li>
                             <li>Adam El Saban</li>
@@ -61,19 +75,67 @@
                             <li>Radovan Hrůza</li>
                             <li>Lukáš Iwoniak</li>
                         </ul>
-                        (nevytvořili jsme "titulky" podobné těm na obrázku výš)
                     </li>
-
+                    <li>Ukázky:<br>
+                        <div class="galleryGRID">
+                            <div><a href="img/submarineGame/1.png" target="_blank"><img alt="Ukázka submarine game 1" class="galleryImg" src="img/submarineGame/1.png"></a></div>
+                            <div><a href="img/submarineGame/2.png" target="_blank"><img alt="Ukázka submarine game 2" class="galleryImg" src="img/submarineGame/2.png"></a></div>
+                            <div><a href="img/submarineGame/3.png" target="_blank"><img alt="Ukázka submarine game 3" class="galleryImg" src="img/submarineGame/3.png"></a></div>
+                            <div><a href="img/submarineGame/4.png" target="_blank"><img alt="Ukázka submarine game 4" class="galleryImg" src="img/submarineGame/4.png"></a></div>
+                            <div><a href="img/submarineGame/5.png" target="_blank"><img alt="Ukázka submarine game 5" class="galleryImg" src="img/submarineGame/5.png"></a></div>
+                            <div><a href="img/submarineGame/6.png" target="_blank"><img alt="Ukázka submarine game 6" class="galleryImg" src="img/submarineGame/6.png"></a></div>
+                            <div><model-viewer src="models/toilet.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+                            <div><model-viewer src="models/fridge.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></div>
+                        </div>
+                    </li>
                 </ul>
             </li>
             <li><span>Erasmus+</span>
                 <ul>
                     <li>06.09.2024 - 24.09.2024</li>
+                    <li>Dublin, Irsko</li>
+                    <li>Náplň 1: Tvorba 3D modelů pro propagační účely<br>
+                        <div class="galleryGRID">
+                            <div><a href="img/mascots/1.png" target="_blank"><img alt="Maskot 1" class="galleryImg" src="img/mascots/1.png"></a></div>
+                            <div><a href="img/mascots/2.png" target="_blank"><img alt="Maskot 2" class="galleryImg" src="img/mascots/2.png"></a></div>
+                            <div><a href="img/mascots/3.png" target="_blank"><img alt="Maskot 3" class="galleryImg" src="img/mascots/3.png"></a></div>
+                            <div><a href="img/mascots/4.png" target="_blank"><img alt="Maskot 4" class="galleryImg" src="img/mascots/4.png"></a></div>
+                        </div>
+                    </li>
+                    <li>Náplň 2: Vytvoření jednoduché interní webové aplikace na zobrazování návrhů na stojany/výlohy
+                        <ul>
+                            <li>Použil jsem hlavně JS pro funkce
+                                <ul>
+                                    <li>Zobrazení 3D modelů (model-viewer library od Googlu, používám ji i zde)</li>
+                                    <li>Swapování mezi stojany</li>
+                                    <li>Vypnutí/zapnutí zobrazení krabiček na ořechy ve stojanech</li>
+                                </ul>
+                            </li>
+                            <li>PHP a Apache2 (XAMPP) použito pro upload (tehdy nenašel jsem jiné funkční řešení a neměl jsem na to moc času)</li>
+                        </ul><br>
+                        <div class="galleryGRID">
+                            <div><a href="img/mascots/stand1.png" target="_blank"><img alt="Stojan 1" class="galleryImg" src="img/mascots/stand1.png"></a></div>
+                            <div><a href="img/mascots/stand2.png" target="_blank"><img alt="Stojan 2" class="galleryImg" src="img/mascots/stand2.png"></a></div>
+                        </div>
+                    </li>
                 </ul>
             </li>
             <li><span>Dlouhodobá maturitní práce</span>
                 <ul>
                     <li>20.05.2024 - 02.06.2023</li>
+                    <li>Náplň: Tvorba 3D grafiky, 2D grafiky (UI), programování pár herních prvků</li>
+                    <li>Ukázky:<br>
+                        <div class="galleryGRID">
+                            <div><a href="img/dlouhodobka/1.png" target="_blank"><img alt="Ukázka dlouhodobka 1" class="galleryImg" src="img/dlouhodobka/1.png"></a></div>
+                            <div><a href="img/dlouhodobka/2.png" target="_blank"><img alt="Ukázka dlouhodobka 2" class="galleryImg" src="img/dlouhodobka/2.png"></a></div>
+                            <div><a href="img/dlouhodobka/3.png" target="_blank"><img alt="Ukázka dlouhodobka 3" class="galleryImg" src="img/dlouhodobka/3.png"></a></div>
+                            <div><a href="img/dlouhodobka/4.png" target="_blank"><img alt="Ukázka dlouhodobka 4" class="galleryImg" src="img/dlouhodobka/4.png"></a></div>
+                            <div><a href="img/dlouhodobka/5.png" target="_blank"><img alt="Ukázka dlouhodobka 5" class="galleryImg" src="img/dlouhodobka/5.png"></a></div>
+                            <div><a href="img/dlouhodobka/6.png" target="_blank"><img alt="Ukázka dlouhodobka 6" class="galleryImg" src="img/dlouhodobka/6.png"></a></div>
+                            <div><a href="img/dlouhodobka/7.gif" target="_blank"><img alt="Ukázka dlouhodobka 7" class="galleryImg" src="img/dlouhodobka/7.gif"></a></div>
+                            <div><a href="img/dlouhodobka/8.gif" target="_blank"><img alt="Ukázka dlouhodobka 8" class="galleryImg" src="img/dlouhodobka/8.gif"></a></div>
+                        </div>
+                    </li>
                 </ul>
             </li>
 

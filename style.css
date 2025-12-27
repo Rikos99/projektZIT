@@ -24,10 +24,33 @@
     --ternary-color: #ff0000;
 }
 
+#logoAndSiteName
+{
+    display: inline-flex;
+}
+#logoAndSiteName h1
+{
+    font-size: 24pt;
+    display: inline-block;
+    padding-top: 5px;
+}
+#logoAndSiteName img
+{
+    width: 5vw;
+    margin: 0.5vw;
+    display: inline-block;
+}
+
 body
 {
     background-color: var(--primary-color);
     color: var(--secondary-color);
+    text-align: justify;
+}
+
+span
+{
+    color: var(--ternary-color);
 }
 
 /* Navigace */
@@ -92,6 +115,7 @@ model-viewer
     margin: 0 auto;
     padding: 5px;
     border: solid 2px var(--secondary-color);
+    display: inline-block;
 }
 
 .modelDIV
@@ -123,6 +147,18 @@ model-viewer
 {
     text-align: center;
 }
+
+.galleryGRID
+{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.galleryImg
+{
+    border: solid 2px var(--secondary-color);
+    width: 44vw;
+}
+
 
 footer
 {
